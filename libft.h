@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:32:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 15:07:23 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:45:10 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <limits.h>
+# include <unistd.h>
 
 int		isalpha(int c);
 int		isdigit(int c);
@@ -43,4 +44,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*strncpy(char *dst, const char *src, size_t len);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 #endif
