@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:32:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 13:54:12 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:07:23 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <stddef.h>
+# include <limits.h>
 
 int		isalpha(int c);
 int		isdigit(int c);
@@ -38,4 +39,8 @@ void	*memchr(const void *s, int c, size_t n);
 int		memcmp(const void *s1, const void *s2, size_t n);
 void	*calloc(size_t nmemb, size_t size);
 int		atoi(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*strncpy(char *dst, const char *src, size_t len);
 #endif
