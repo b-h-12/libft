@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 14:42:55 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/24 15:15:49 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 12:19:51 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	strlen(const char *s)
 		i++;
 	return (i);
 }
+
 int	strlcpy(char *dst, const char *src, size_t size)
 {
 	int	i;
@@ -54,6 +55,7 @@ int	strlcat(char *dst, const char *src, size_t size)
 	dst[i + j] = '\0';
 	return (i + strlen(src));
 }
+
 char	*strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

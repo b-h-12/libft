@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:43:08 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/24 15:16:07 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 12:19:11 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,28 @@ int	isalpha(int c)
 		return (1);
 	return (0);
 }
+
 int	isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
+
 int	isalnum(int c)
 {
 	if (isalpha(c) || isdigit(c))
 		return (1);
 	return (0);
 }
+
 int	isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
+
 int	isprint(int c)
 {
 	if (c >= 32 && c <= 126)
