@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:58:23 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:29 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:41:11 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,25 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+	return (str);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	str = (char *)malloc(strlen(s) + 1);
+	if (!str)
+		return (NULL);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }
