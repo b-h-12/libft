@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:07:04 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 15:53:32 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:44:05 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-char	strncpy(char *dst, const char *src, size_t n)
+char	*strncpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 
