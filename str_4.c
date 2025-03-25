@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:58:23 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 16:02:56 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:35:29 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,28 @@
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	size_t	i = 0, j = 0, k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	if (!s || !(str = (char **)malloc((count_words(s, c) + 1) * sizeof(char *))))
-		return (NULL);
-	while (*s)
+	str = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	i = 0;
+	j = 0;
+	while (s && s[i])
 	{
-		if (*s != c)
+		if (s[i] != c)
 		{
 			k = 0;
-			str[j] = (char *)malloc(strlen(s) + 1);
+			while (s[i + k] && s[i + k] != c)
+				k++;
+			str[j] = (char *)malloc(k + 1);
 			if (!str[j])
 				return (NULL);
-			while (*s && *s != c)
-				str[j][k++] = *s++;
-			str[j++][k] = '\0';
+			strncpy(str[j], &s[i], k);
+			str[j][k] = '\0';
+			j++;
 		}
-		else
-			s++;
+		i++;
 	}
-	str[j] = NULL;
 	return (str);
 }
-
