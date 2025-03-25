@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:58:23 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 16:42:15 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:44:50 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,3 +75,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 }
 
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	write(fd, s, strlen(s));
+}
