@@ -6,26 +6,9 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:41:58 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 13:51:29 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 13:54:59 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	is_space(char c)
-{
-	if (c == ' ')
-		return (1);
-	if (c == '\f')
-		return (1);
-	if (c == '\r')
-		return (1);
-	if (c == '\t')
-		return (1);
-	if (c == '\n')
-		return (1);
-	if (c == '\v')
-		return (1);
-	return (0);
-}
 
 int	ft_atoi(char *str)
 {
@@ -36,7 +19,8 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	val = 0;
-	while (is_space(str[i]))
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	if (strcmp(str, "-2147483648") == 0)
 		return (-2147483648);

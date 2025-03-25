@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:32:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 13:14:49 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 13:54:12 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ void	*memmove(void *dst, const void *src, size_t n);
 void	*memchr(const void *s, int c, size_t n);
 int		memcmp(const void *s1, const void *s2, size_t n);
 void	*calloc(size_t nmemb, size_t size);
-
-
+int		atoi(const char *str);
 #endif
