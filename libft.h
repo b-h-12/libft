@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:32:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 12:18:42 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/25 13:14:49 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,13 @@ char	*strrchr(const char *s, int c);
 char	*strdup(const char *s);
 void	toupper(char *s);
 void	tolower(char *s);
+void	*memset(void *s, int c, size_t n);
+void	*memcpy(void *dst, const void *src, size_t n);
+void	bzero(void *s, size_t n);
+void	*memmove(void *dst, const void *src, size_t n);
+void	*memchr(const void *s, int c, size_t n);
+int		memcmp(const void *s1, const void *s2, size_t n);
+void	*calloc(size_t nmemb, size_t size);
+
 
 #endif
