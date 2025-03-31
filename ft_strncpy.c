@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mem_2.c                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 13:05:13 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 13:54:31 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/03/31 13:37:25 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/03/31 13:37:51 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t	i;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while (n-- && str1 && str2)
+	i = 0;
+	while (src[i] && i < n)
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
+		dst[i] = src[i];
+		i++;
 	}
-	return (0);
-}
-
-void	*calloc(size_t nmemb, size_t size)
-{
-	void	*ptr;
-
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	dst[i] = '\0';
+	return (dst);
 }

@@ -1,48 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is.c                                               :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 12:43:08 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/25 12:19:11 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/03/31 12:49:27 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/03/31 12:50:06 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
-}
+	unsigned char	*str;
+	unsigned char	chr;
 
-int	isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	isalnum(int c)
-{
-	if (isalpha(c) || isdigit(c))
-		return (1);
-	return (0);
-}
-
-int	isascii(int c)
-{
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
-}
-
-int	isprint(int c)
-{
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	str = (unsigned char *)s;
+	chr = (unsigned char)c;
+	while (n-- && str)
+		*str++ = chr;
+	return (s);
 }
