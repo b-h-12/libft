@@ -33,7 +33,23 @@ SRC = ft_atoi.c \
 	  ft_strrchr.c \
 	  ft_strtrim.c \
 	  ft_substr.c \
+	  ft_tolower.c \
+	  ft_toupper.c
+
+
+BONUS = ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -41,10 +57,13 @@ CFLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -rf $(NAME)
