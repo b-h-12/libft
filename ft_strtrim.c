@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 14:09:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 14:10:02 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/03/31 17:20:05 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(end - start + 1);
 	if (!str)
 		return (NULL);
-	ft_strncpy(str, &s1[start], end - start);
+	ft_strlcpy(str, &s1[start], end - start);
 	str[end - start] = '\0';
 	return (str);
 }

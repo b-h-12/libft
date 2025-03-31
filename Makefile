@@ -9,7 +9,6 @@ SRC = ft_atoi.c \
 	  ft_isdigit.c \
 	  ft_isprint.c \
 	  ft_itoa.c \
-	  ft_memccpy.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
 	  ft_memcpy.c \
@@ -45,7 +44,6 @@ BONUS = ft_lstadd_back.c \
 		ft_lstlast.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
-		ft_lstsize.c
 
 OBJ = $(SRC:.c=.o)
 
