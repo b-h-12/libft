@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 14:10:28 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 17:14:00 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/04 17:43:00 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,49 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
+static char	*allocate_word(const char *s, char c, int *i)
+{
+	int		start;
+	int		len;
+	char	*word;
+
+	while (s[*i] == c)
+		(*i)++;
+	start = *i;
+	len = 0;
+	while (s[*i] && s[*i] != c)
+	{
+		(*i)++;
+		len++;
+	}
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, &s[start], len + 1);
+	return (word);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	char	**result;
+	int		i;
+	int		j;
+	int		words;
 
-	str = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
 	j = 0;
-	while (s && s[i])
+	while (j < words)
 	{
-		if (s[i] != c)
-		{
-			k = 0;
-			while (s[i + k] && s[i + k] != c)
-				k++;
-			str[j] = (char *)malloc(k + 1);
-			if (!str[j])
-				return (NULL);
-			ft_strlcpy(str[j], &s[i], k);
-			str[j][k] = '\0';
-			j++;
-		}
-		i++;
+		result[j] = allocate_word(s, c, &i);
+		if (!result[j++])
+			return (NULL);
 	}
-	return (str);
+	result[j] = NULL;
+	return (result);
 }
