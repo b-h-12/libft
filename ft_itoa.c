@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:44:27 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 12:47:00 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/04 17:33:03 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,26 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
-	int		len;
 
-	i = 0;
-	len = power_of_ten(n);
-	str = (char *)malloc(sizeof(char) * (len + 2));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	i = power_of_ten(n);
+	str = malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (NULL);
 	if (n < 0)
 	{
-		str[i++] = '-';
+		str[0] = '-';
 		n = -n;
+		i ++;
 	}
-	while (n / 10)
+	
+	str[i + 1] = '\0';
+	while (i >= 0 && str[i] != '-')
 	{
-		str[i++] = n % 10 + '0';
+		str[i] = n % 10 + '0';
 		n /= 10;
+		i--;
 	}
-	str[i++] = n % 10 + '0';
-	str[i] = '\0';
 	return (str);
 }
