@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:43:47 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 16:16:16 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/04 17:13:42 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (ft_strcmp(str, "-2147483648") == 0)
 		return (-2147483648);
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -sign;
