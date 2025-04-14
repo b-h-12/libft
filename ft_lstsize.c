@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 22:06:22 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/09 23:15:02 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:08:43 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		i;
 	t_list	*l;
 
 	i = 0;
 	l = lst;
-	while(l)
+	while (l)
 	{
 		l = l->next;
 		i++;
