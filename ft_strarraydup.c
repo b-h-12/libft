@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strarraydup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 13:21:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/05/06 18:09:05 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/05/09 15:38:25 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/05/09 21:07:53 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	**ft_strarraydup(char **array)
 {
+	char	**ret;
 	int	i;
 
-	i = 0;
-	if (!s)
+	if (!array || !*array)
 		return (NULL);
-	c = c % 256;
-	while (s[i])
+	i = 0;
+	while (array[i])
+		i++;
+	ret = (char **)malloc(sizeof(char *) * (i + 1));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (array[i])
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
+		ret[i] = ft_strdup(array[i]);
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *)s + i);
-	return (NULL);
+	ret[i] = NULL;
+	return (ret);
 }

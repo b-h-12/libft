@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:32:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/09 23:54:16 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/05/13 14:31:05 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *n);
+void				ft_lstadd_front(t_list **lst, t_list *n);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
@@ -68,5 +68,8 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
+void	ft_append(char **s1, char *s2);
+void	ft_freestrarray(char ***array);
+char	**ft_strarraydup(char **array);
 
 #endif

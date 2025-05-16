@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_freestrarray.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 13:21:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/05/06 18:09:05 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/05/09 20:51:56 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/05/09 20:59:37 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_freestrarray(char ***array)
 {
-	int	i;
+    int	i;
+    char **temp;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	c = c % 256;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *)s + i);
-	return (NULL);
+    if (!array || !*array)
+        return ;
+    
+    temp = *array;
+    i = 0;
+    while (temp[i])
+    {
+        free(temp[i]);
+        i++;
+    }
+    free(temp);
+    *array = NULL;
 }

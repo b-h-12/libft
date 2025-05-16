@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_append.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 13:21:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/05/06 18:09:05 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/05/09 20:33:28 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/05/09 20:34:00 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_append(char **s1, char *s2)
 {
-	int	i;
+	char	*str;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	c = c % 256;
-	while (s[i])
+	j = 0;
+	if (!s1)
+		return ;
+	str = (char *)malloc(ft_strlen(*s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return ;
+	while (*s1 && (*s1)[i])
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
+		str[i] = (*s1)[i];
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *)s + i);
-	return (NULL);
+	while (s2 && s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	free(*s1);
+	*s1 = str;
 }
